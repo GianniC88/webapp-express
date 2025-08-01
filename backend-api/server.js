@@ -13,12 +13,12 @@ app.get('/', (req, res) => {
 	res.send('my app')
 })
 
-app.get('/movies', (req, res) => {
+app.get('/api/movies', (req, res) => {
 	res.send('list movies')
 })
 
 
 
-app.get('/movies/:id', (req, res) => {
+app.get('/api/movies/:id', (req, res) => {
 	res.send(`single movie ${req.params.id}`)
 })
