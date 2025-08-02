@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT
 const MoviesRouter = require('./routes/movies')
-const connection = require('./connection')
+
 
 
 app.use('/api/movies', MoviesRouter)
