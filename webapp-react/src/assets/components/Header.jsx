@@ -3,12 +3,12 @@ export default function Header() {
 	const menu = [
 		{
 			id: 1,
-			to: '/HomePage',
+			to: '/',
 			text: 'Home'
 		},
 		{
 			id: 2,
-			to: '/Movies/:id',
+			to: '/movies',
 			text: 'Movies'
 		}
 
@@ -34,13 +34,13 @@ export default function Header() {
 							{
 								menu.map(item => {
 									return (
-										<>
-											<li className="nav-item" key={item.id}>
-												<NavLink className="nav-link" to={item.to} aria-current="page">
-													{item.text}
-												</NavLink>
-											</li>
-										</>
+
+										<li key={item.id} className="nav-item" >
+											<NavLink className="nav-link" to={item.to} aria-current="page">
+												{item.text}
+											</NavLink>
+										</li>
+
 									)
 								})
 							}

@@ -3,6 +3,7 @@ import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
 import DefaultLayout from './assets/layout/DefaultLayout'
 import HomePage from './assets/pages/HomePage'
 import SingleMovies from './assets/pages/SingleMoviesPage'
+import MoviesPage from './assets/pages/moviesPage'
 function App() {
 
 
@@ -11,8 +12,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
-            <Route path='/HomePage' element={<HomePage />} />
-            <Route path='/Movies/:id' element={<SingleMovies />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/homepage' element={<HomePage />} />
+            <Route path='/movies' element={<MoviesPage />} />
+            <Route path='/movies/:id' element={<SingleMovies />} />
           </Route>
         </Routes>
       </BrowserRouter>
