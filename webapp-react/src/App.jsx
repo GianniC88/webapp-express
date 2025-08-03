@@ -1,12 +1,19 @@
 import { useState } from 'react'
-
-
+import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
+import DefaultLayout from './assets/layout/DefaultLayout'
+import HomePage from './assets/pages/HomePage'
 function App() {
 
 
   return (
     <>
-      <h1 className='bg-secondary'>ciao</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route path='/' element={<HomePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
