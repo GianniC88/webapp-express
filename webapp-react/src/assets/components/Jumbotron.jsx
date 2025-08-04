@@ -1,7 +1,7 @@
-export default function Jumbotron({ title, text, cta, onCtaClick }) {
+export default function Jumbotron({ title, text, cta, onCtaClick, className }) {
 	return (
 
-		<div className="p-5 mb-4 bg-light rounded-3">
+		<div className={`p-5 mt-3 mb-4  rounded-3 ${className || ''}`}>
 			<div className="container-fluid py-5">
 				<h1 className="display-5 fw-bold">{title}</h1>
 				<p className="col-md-8 fs-4">

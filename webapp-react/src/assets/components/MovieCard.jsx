@@ -24,6 +24,7 @@ export default function MovieCard({ movies }) {
 									<ul className="list-unstyled">
 										<li><strong>Director:</strong> {movie.director}</li>
 										<li><strong>Genre:</strong> {movie.genre}</li>
+										<li><strong>Year:</strong> {movie.release_year}</li>
 										<li className="card-text"><strong>The plot of the movie</strong>{movie.abstract}</li>
 									</ul>
 									<Link to={`/movies/${movie.id}`} className="btn btn-primary">

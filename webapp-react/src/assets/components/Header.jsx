@@ -16,7 +16,7 @@ export default function Header() {
 
 	return (
 		<>
-			<header><nav className="navbar navbar-expand-sm navbar-light bg-light">
+			<header><nav className="navbar navbar-expand-sm navbar-light ">
 				<div className="container">
 					<a className="navbar-brand" href="#">Movies</a>
 					<button
