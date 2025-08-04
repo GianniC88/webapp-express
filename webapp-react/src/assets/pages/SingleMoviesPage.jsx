@@ -15,6 +15,7 @@ export default function SingleMovies() {
 		fetch(api_server_url)
 			.then(res => res.json())
 			.then(data => {
+				const MoviesArray = data.data
 				console.log(data)
 				setMovie(data)
 			})
@@ -23,7 +24,7 @@ export default function SingleMovies() {
 	return (
 		<>
 			<h1>Single Movie</h1>
-			<Jumbotron title={movie.title} text={movie?.plot} cta={`view ${movie?.title}`} />
+			<Jumbotron title={movie.title} text={movie?.plot} cta={`Guarda ${movie?.title}`} />
 
 			<section>
 				<div className="container">

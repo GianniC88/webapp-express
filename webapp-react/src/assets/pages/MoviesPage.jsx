@@ -5,6 +5,7 @@ import MovieCard from "../components/MovieCard"
 export default function MoviesPage() {
 	const api_server_url = import.meta.env.VITE_BACKEND_API_SERVER
 	const [movies, setMovies] = useState([])
+	const [loading, setLoading] = useState(true)
 
 
 	useEffect(() => {
@@ -18,7 +19,7 @@ export default function MoviesPage() {
 				setLoading(false)
 			})
 			.catch(err => {
-				console.log('error;'.err)
+				console.log('error;', err)
 				setLoading(false)
 			})
 	}, [])
