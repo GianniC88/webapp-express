@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT
 const MoviesRouter = require('./routes/movies')
-
+app.use('/images', express.static('public/img'))
 
 const cors = require('cors')
 app.use(cors())
