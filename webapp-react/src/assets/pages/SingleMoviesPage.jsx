@@ -34,10 +34,10 @@ export default function SingleMovies() {
 
 					<h2>Recensioni</h2>
 
+					<img src={`${import.meta.env.VITE_BACKEND_URL}/images/${movie.image}`} alt={movie.title} />
 					{movie.reviews && movie.reviews.length > 0 ? (
 						movie.reviews.map(review => (
 							<div key={review.id} className="card p-3 mb-3">
-								<img src={`${import.meta.env.VITE_BACKEND_URL}/images/${movie.image}`} />
 
 								<h5>Recensione di: {review.name}</h5>
 								<div className="mb-2">

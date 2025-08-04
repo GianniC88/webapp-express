@@ -1,4 +1,4 @@
-export default function Jumbotron({ title, text, cta }) {
+export default function Jumbotron({ title, text, cta, onCtaClick }) {
 	return (
 
 		<div className="p-5 mb-4 bg-light rounded-3">
@@ -7,9 +7,15 @@ export default function Jumbotron({ title, text, cta }) {
 				<p className="col-md-8 fs-4">
 					{text}
 				</p>
-				<button className="btn btn-primary btn-lg" type="button">
-					{cta}
-				</button>
+				{cta && (
+					<button
+						className="btn btn-primary"
+						onClick={onCtaClick}
+					>
+						{cta}
+					</button>
+				)}
+
 			</div>
 		</div>
 

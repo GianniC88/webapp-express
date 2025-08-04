@@ -14,7 +14,7 @@ export default function MoviesPage() {
 			.then(res => res.json())
 			.then(data => {
 				console.log(data)
-				const moviesArray = data.data || data
+				const moviesArray = data.data
 				setMovies(moviesArray)
 				setLoading(false)
 			})
