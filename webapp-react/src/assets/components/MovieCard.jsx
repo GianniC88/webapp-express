@@ -21,8 +21,12 @@ export default function MovieCard({ movies }) {
 								/>
 								<div className="card-body">
 									<h3 className="card-title">{movie.title}</h3>
-									<p className="card-text">{movie.plot}</p>
-									<Link to={`/movies/${movie.id}`} className="btn">
+									<ul className="list-unstyled">
+										<li><strong>Director:</strong> {movie.director}</li>
+										<li><strong>Genre:</strong> {movie.genre}</li>
+										<li className="card-text"><strong>The plot of the movie</strong>{movie.abstract}</li>
+									</ul>
+									<Link to={`/movies/${movie.id}`} className="btn btn-primary">
 										Guarda
 									</Link>
 								</div>
