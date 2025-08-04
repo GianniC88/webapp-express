@@ -1,7 +1,10 @@
+import Jumbotron from "../components/Jumbotron"
 export default function HomePage() {
 	return (
 		<>
-			<h1>Home Page</h1>
+			<Jumbotron title='Movies & GO ' text='Scegli il tuo Film e Buona Visione' cta='Scegli Film' />
+
+
 		</>
 	)
 }
