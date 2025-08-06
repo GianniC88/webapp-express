@@ -60,11 +60,14 @@ function show(req, res) {
 
 
 function storeReview(req, res) {
-	const { id } = req.params
-	const { nickname, name, vote, text } = req.body
 
-	const sql = 'INSERT INTO reviews (movie_id, nickname, name, vote , text )VALUES(?,?,?,?,?)'
-	connection.execute(sql, [id, nickname, name, vote, text], (err, result) => {
+	console.log(req.params, req.body)
+	const { id } = req.params
+
+	const { nickname, name, vote, content } = req.body
+
+	const sql = 'INSERT INTO reviews (movie_id, nickname, name, vote , text ) VALUES(?,?,?,?,?)'
+	connection.execute(sql, [id, nickname, name, vote, content], (err, result) => {
 		if (err) return res.status(500).json({
 			error: true,
 			message: err.message
@@ -78,7 +81,7 @@ function storeReview(req, res) {
 				nickname,
 				name,
 				vote,
-				text
+				content
 
 			}
 		})
