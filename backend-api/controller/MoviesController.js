@@ -26,6 +26,7 @@ function show(req, res) {
 
 	const { id } = req.params
 
+
 	const sql = 'SELECT * FROM movies WHERE id=?'
 
 	connection.execute(sql, [id], (err, result) => {
@@ -58,11 +59,37 @@ function show(req, res) {
 }
 
 
+function storeReview(req, res) {
+	const { id } = req.params
+	const { nickname, name, vote, text } = req.body
 
+	const sql = 'INSERT INTO reviews (movie_id, nickname, name, vote , text )VALUES(?,?,?,?,?)'
+	connection.execute(sql, [id, nickname, name, vote, text], (err, result) => {
+		if (err) return res.status(500).json({
+			error: true,
+			message: err.message
+		})
+		res.status(201).json({
+			error: false,
+			messagge: 'Review added successfull',
+			review: {
+				id: result.insertId,
+				movie_id: id,
+				nickname,
+				name,
+				vote,
+				text
+
+			}
+		})
+	})
+
+}
 
 
 
 module.exports = {
 	index,
-	show
+	show,
+	storeReview
 }

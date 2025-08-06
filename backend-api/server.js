@@ -9,6 +9,8 @@ app.use('/images', express.static('public/img'))
 const cors = require('cors')
 app.use(cors())
 
+app.use(express.json())
+
 
 app.use('/api/movies', MoviesRouter)
 

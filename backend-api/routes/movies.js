@@ -12,4 +12,7 @@ router.get('/', MoviesController.index)
 
 router.get('/:id', MoviesController.show)
 
+
+router.get('/:id/reviews', MoviesController.storeReview)
+
 module.exports = router
